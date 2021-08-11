@@ -1,20 +1,29 @@
 
 const pallo = document.querySelector('.pallo')
+let x = 300
+let y = 300
+
+pallo.style.left = x+"px"
+pallo.style.top = y+"px"
 
 const liikutapalloa = function(e) {
-    if(e.keycode ==37) {
-        console.log('vasemalle')
+    if(e.keyCode ==37) {
+        x = x -3
+        pallo.style.left = x+"px"
     }
-    if(e.keycode ==38) {
-        console.log('ylös')
+    else if(e.keyCode ==38) {
+        y = y -3
+        pallo.style.top = y+"px"
     }
-    if(e.keycode ==39) {
-        console.log('oikealle')
+    else if(e.keyCode ==39) {
+        x = x + 3
+        pallo.style.left = x+"px"
     }
-    if(e.keycode ==40) {
-        console.log('alas')
+    else if(e.keyCode ==40) {
+        y = y + 3
+        pallo.style.top = y+"px"
     }
-    console.log(e.keyCode)
+    
 }
 
 document.addEventListener('keydown', liikutapalloa)
